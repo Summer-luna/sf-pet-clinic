@@ -16,7 +16,7 @@
 
 	<groupId>luna.springframework</groupId>
 	<artifactId>sf-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>sf-pet-clinic</name>
 	<description>sf-pet-clinic</description>
 
@@ -43,13 +43,17 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+					</checkModificationExcludes>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
 		<developerConnection>scm:git:git@github.com:Summer-luna/sf-pet-clinic.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>sf-pet-clinic-0.0.2</tag>
   </scm>
 
 </project>
