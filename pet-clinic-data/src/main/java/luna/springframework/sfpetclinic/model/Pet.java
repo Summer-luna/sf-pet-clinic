@@ -11,9 +11,7 @@ public class Pet {
         return petType;
     }
 
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
+    public void setPetType(PetType petType) { this.petType = petType; }
 
     public Owner getOwner() {
         return owner;
