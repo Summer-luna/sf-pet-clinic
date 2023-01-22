@@ -1,11 +1,13 @@
 package luna.springframework.sfpetclinic.services.map;
 
 import luna.springframework.sfpetclinic.model.Owner;
-import luna.springframework.sfpetclinic.services.CrudService;
+import luna.springframework.sfpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -23,12 +25,17 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner save(Owner object, Long id) {
+    public Owner save(Owner object) {
         return super.save(object, object.getId());
     }
 
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByFirstName(String firstName) {
+        return null;
     }
 }

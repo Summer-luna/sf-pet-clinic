@@ -1,11 +1,12 @@
 package luna.springframework.sfpetclinic.services.map;
 
 import luna.springframework.sfpetclinic.model.Pet;
-import luna.springframework.sfpetclinic.services.CrudService;
+import luna.springframework.sfpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
@@ -22,7 +23,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
     }
 
     @Override
-    public Pet save(Pet object, Long id) {
+    public Pet save(Pet object) {
         return super.save(object, object.getId());
     }
 
