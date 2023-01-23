@@ -1,11 +1,10 @@
 package luna.springframework.sfpetclinic.bootstrap;
 
 import luna.springframework.sfpetclinic.model.Owner;
+import luna.springframework.sfpetclinic.model.Vet;
 import luna.springframework.sfpetclinic.services.OwnerService;
 import luna.springframework.sfpetclinic.services.VetService;
 
-import luna.springframework.sfpetclinic.services.map.OwnerServiceMap;
-import luna.springframework.sfpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -37,6 +36,23 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("Loaded Owners...");
+
+        Vet vet1 = new Vet();
+        vet1.setId(1L);
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Axe");
+
+        vetService.save(vet1);
+
+        Vet vet2 = new Vet();
+        vet2.setId(2L);
+        vet2.setFirstName("Jessie");
+        vet2.setLastName("Porter");
+
+        vetService.save(vet2);
+
+        System.out.println("Loaded Vets...");
+
     }
 
 
